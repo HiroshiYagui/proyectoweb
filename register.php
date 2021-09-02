@@ -77,7 +77,7 @@
                             <div class="register-link">
                                 <p>
                                     ¿Ya tienes una cuenta? 
-                                    <a href="login.html">Iniciar sesión </a>
+                                    <a href="login.php">Iniciar sesión </a>
                                 </p>
                             </div>
                         </div>

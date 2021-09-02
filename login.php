@@ -78,7 +78,7 @@
                             <div class="register-link">
                                 <p>
                                     ¿No tienes cuenta? 
-                                    <a href="register.html">Registrate aquí</a>
+                                    <a href="register.php">Registrate aquí</a>
                                 </p>
                             </div>
                         </div>
