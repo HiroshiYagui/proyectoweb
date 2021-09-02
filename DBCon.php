@@ -3,10 +3,10 @@
 //$dbpass = 'qodg228qe0w44a1a';
 //$dbname = 'rvbx6ivotzmm12th';
 //$host ='frwahxxknm9kwy6c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';//editar
-$dbuser = 'admin';
-$dbpass = '@cs72yi50';
-$dbname = 'bdbluebus';
-$host = 'localhost'; 
+$dbuser = 'ag1ifq04aiclqohr';
+$dbpass = 'hw1ailng7b3akrx2';
+$dbname = 'yes7ogwhyaa6fthl';
+$host = 'pk1l4ihepirw9fob.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'; 
 $conn = mysqli_connect($host,$dbuser,$dbpass,$dbname);//editar
 
 
