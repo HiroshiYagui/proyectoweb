@@ -1,5 +1,5 @@
 <?php
-header("login.php");
+header("Location:login.php");
 exit();
 
 ?>
