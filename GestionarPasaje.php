@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Gestionar Viaje</title>
+    <title>Gestionar Pasaje</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -51,28 +51,28 @@
                         <img src="images/admin-big-01.png" alt="John Doe" />
                     </div>
                     <h4 class="name">Usuario</h4>
-                    <a href="#">Cerrar Sesion</a>
+                    <a href="index.php">Cerrar Sesion</a>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="Administrador.html">
+                            <a href="Administrador.php">
                                 <i class="fas fa-user"></i>Informacion</a>
                         </li>
                         <li>
-                            <a href="GestionarPasaje.html">
+                            <a href="GestionarPasaje.php">
                                 <i class="fas fa-shopping-basket"></i>Gestionar Pasaje</a>
                         </li>
                         <li>
-                            <a href="GestionarViaje.html">
+                            <a href="GestionarViaje.php">
                                 <i class="fas fa-location-arrow"></i>Gestionar Viaje</a>
                         </li>
                         <li>
-                            <a href="GestionarAfiliacion.html">
+                            <a href="GestionarAfiliacion.php">
                                 <i class="fas fa-bar-chart"></i>Gestionar Afiliacion</a>
                         </li>
                         <li>
-                            <a href="GestionarUsuarios.html">
+                            <a href="GestionarUsuarios.php">
                                 <i class="fas fa-users"></i>Gestionar Usuarios</a>
                         </li>
                     </ul>
@@ -115,28 +115,28 @@
                             <img src="images/admin-big-01.png" alt="John Doe" />
                         </div>
                         <h4 class="name">Usuario</h4>
-                        <a href="#">Cerrar Sesion</a>
+                        <a href="index.php">Cerrar Sesion</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
                             <li>
-                                <a href="Administrador.html">
+                                <a href="Administrador.php">
                                     <i class="fas fa-user"></i>Informacion</a>
                             </li>
                             <li>
-                                <a href="GestionarPasaje.html">
+                                <a href="GestionarPasaje.php">
                                     <i class="fas fa-shopping-basket"></i>Gestionar Pasaje</a>
                             </li>
                             <li>
-                                <a href="GestionarViaje.html">
+                                <a href="GestionarViaje.php">
                                     <i class="fas fa-location-arrow"></i>Gestionar Viaje</a>
                             </li>
                             <li>
-                                <a href="GestionarAfiliacion.html">
+                                <a href="GestionarAfiliacion.php">
                                     <i class="fas fa-bar-chart"></i>Gestionar Afiliacion</a>
                             </li>
                             <li>
-                                <a href="GestionarUsuarios.html">
+                                <a href="GestionarUsuarios.php">
                                     <i class="fas fa-users"></i>Gestionar Usuarios</a>
                             </li>
                         </ul>
@@ -156,7 +156,7 @@
                                         <span class="au-breadcrumb-span">Te encuentras en:</span>
                                         <ul class="list-unstyled list-inline au-breadcrumb__list">
                                             <li class="list-inline-item active">
-                                                <a href="#">Gestionar Viaje</a>
+                                                <a href="#">Gestionar Pasaje</a>
                                             </li>
                                             <li class="list-inline-item seprate">
                                                 <span>/</span>
@@ -165,7 +165,7 @@
                                         </ul>
                                     </div>
                                     <button class="au-btn au-btn-icon au-btn--green">
-                                        <i class="zmdi zmdi-plus"></i>Agregar Viaje</button>
+                                        <i class="zmdi zmdi-plus"></i>Agregar Pasaje</button>
                                 </div>
                             </div>
                         </div>
@@ -177,116 +177,54 @@
             <div class="col-lg-9 offset-lg-1">
                 <div class="table-responsive table--no-card m-b-30">
                     <table class="table table-borderless table-striped table-earning">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Destiono</th>
-                                <th>Hora</th>
-                                <th class="text-right">Precio</th>
-                                <th class="text-right">Cantidad</th>
-                                <th class="text-right">Empresa</th>
-                                <th class="text-right">Eliminar</th>
-                                <th class="text-right">Modificar</th>
-                            </tr>
+                    <?php include 'dbcon.php';
+                        $sql = "SELECT pasaje.codigo,pasaje.nombre,pasaje.apellido,pasaje.dni,pasaje.telefono,pasaje.email,viaje.destino,
+                        viaje.fechas,empresa.nombre_empresa,usuario.usuario FROM pasaje 
+                        INNER JOIN viaje ON pasaje.idViaje=viaje.id
+                        INNER JOIN empresa ON viaje.idEmpresa=empresa.id
+                        INNER JOIN usuario ON pasaje.idCliente=usuario.id;";
+                        $result = mysqli_query($conn, $sql);
+                        $num_resultados = mysqli_num_rows($result);
+
+                        echo "<thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th class='text-right'>DNI</th>
+                            <th class='text-right'>Telefono</th>
+                            <th class='text-right'>Email</th>
+                            <th class='text-right'>Destino</th>
+                            <th class='text-right'>Fecha Salida</th>
+                            <th class='text-right'>Empresa</th>
+                            <th class='text-right'>Usuario</th>
+                            <th class='text-right'>Eliminar</th>
+                            <th class='text-right'>Modificar</th>
+                        </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>2018-09-29 05:57</td>
-                                <td>Piura</td>
-                                <td>2018-09-30 11:55</td>
-                                <td class="text-right">$30.00</td>
-                                <td class="text-right">14</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
+                        <tbody>";
+                        for ($i=0; $i <$num_resultados; $i++) {
+                            $row = mysqli_fetch_array($result); 
+                            echo "
+                                <tr>
+                                <td>".$row['codigo']."</td>
+                                <td>".$row['nombre']."</td>
+                                <td>".$row['apellido']."</td>
+                                <td class='text-right'>".$row['dni']."</td>
+                                <td class='text-right'>".$row['telefono']."</td>
+                                <td class='text-right'>".$row['email']."</td>
+                                <td class='text-right'>".$row['destino']."</td>
+                                <td class='text-right'>".$row['fechas']."</td>
+                                <td class='text-right'>".$row['nombre_empresa']."</td>
+                                <td class='text-right'>".$row['usuario']."</td>
+                                <td class='text-right'><button class='au-btn--small au-btn-icon au-btn--blue'>
+                                    <i class='zmdi zmdi-minus'></i>Eliminar</button></td>
+                                <td class='text-right'><button class='au-btn--small au-btn-icon au-btn--green'>
+                                    <i class='zmdi zmdi-plus'></i>Modificar</button></td>
                             </tr>
-                            <tr>
-                                <td>2018-09-28 01:22</td>
-                                <td>La Libertad</td>
-                                <td>2018-09-28 9:30</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">20</td>
-                                <td class="text-right">El Rapido</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-27 02:12</td>
-                                <td>Tumbes</td>
-                                <td>2018-09-28 9:30</td>
-                                <td class="text-right">$20.00</td>
-                                <td class="text-right">17</td>
-                                <td class="text-right">Cruz del Sur</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-26 23:06</td>
-                                <td>Ica</td>
-                                <td>2018-09-27 6:10</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">22</td>
-                                <td class="text-right">La Molina</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-25 19:03</td>
-                                <td>Ancash</td>
-                                <td>2018-09-26 5:30</td>
-                                <td class="text-right">$10.00</td>
-                                <td class="text-right">12</td>
-                                <td class="text-right">Cruz del Sur</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-29 05:57</td>
-                                <td>Lambayeque</td>
-                                <td>2018-09-29 19:00</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">15</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-24 19:10</td>
-                                <td>Ayacucho</td>
-                                <td>2018-09-25 3:10</td>
-                                <td class="text-right">$30.00</td>
-                                <td class="text-right">9</td>
-                                <td class="text-right">El Rapido</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-22 00:43</td>
-                                <td>Madre de Dios</td>
-                                <td>2018-09-22 00:43</td>
-                                <td class="text-right">$20.00</td>
-                                <td class="text-right">14</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                        </tbody>
+                            </tbody>";
+                        }
+                            ?>
                     </table>
                 </div>
             </div>

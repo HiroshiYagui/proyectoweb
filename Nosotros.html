@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nosotros</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="css/Nosotros.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+   </head>
+<body>
+  <nav> 
+    <div class="menu">
+      <div class="logo">
+        <a href="#">Blues Bus</a>
+      </div>
+      <ul>
+        <li><a href="index.php">Inicio</a></li>
+        <li><a href="Nosotros.html">Nosotros</a></li>
+        <li><a href="Empresas.html">Empresas</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="login.php">Iniciar Sesion</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="accordion">
+    <div class="image-box">
+      <img src="images/mainImg.png" alt="">
+    </div>
+    <div class="accordion-text">
+      <div class="title">Nosotros</div>
+    <ul class="faq-text">
+      <li>
+        <div class="question-arrow">
+          <span class="question">Quienes Somos?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Blue Bus es una solución para poder encontrar las mejores ofertas en viajes interprovinciales.</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">En que consiste Nuestro Modelo?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Blue Bus se ha afiliado con diversas empresas de transporte para ofrecerte la mayor variedad de viajes a nivel nacional. </p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Donde Encontrarnos?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Visita nuestra página o en nuestras redes sociales.</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Metodos de Pago?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Por ahora únicamente aceptamos pagos por depósito en agentes bancarios. Próximamente ampliaremos las opciones</p>
+        <span class="line"></span>
+      </li>
+    </ul>
+    </div>
+  </div>
+
+
+  <script>
+    let li = document.querySelectorAll(".faq-text li");
+    for (var i = 0; i < li.length; i++) {
+      li[i].addEventListener("click", (e)=>{
+        let clickedLi;
+        if(e.target.classList.contains("question-arrow")){
+          clickedLi = e.target.parentElement;
+        }else{
+          clickedLi = e.target.parentElement.parentElement;
+        }
+       clickedLi.classList.toggle("showAnswer");
+      });
+    }
+  </script>
+</body>
+
+</html>

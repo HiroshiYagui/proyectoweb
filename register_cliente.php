@@ -2,11 +2,13 @@
  
     include 'dbcon.php';
     
-    $user=$_POST['username'];
+    $user=$_POST['usuario'];
+    $user=$_POST['apellido'];
+    $user=$_POST['dni'];
     $email=$_POST['email'];
     $psw=$_POST['password'];
     $code=''.random_int(10000,99999).'C';
-    
+    $fecha=date("Y-m-d");
     $reg_exUser='/^[a-zA-Z]+$/';
     $reg_exPass='/^[A-Za-z0-9]{8,}+$/';
     if(!preg_match($reg_exUser,$user) || !preg_match($reg_exPass,$psw)){
@@ -24,7 +26,7 @@
         header('Location:register.php?error=1');
         exit;
     }else{
-        header('Location:login.html');
+        header('Location:login.php');
         exit;
     }
 

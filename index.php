@@ -14,11 +14,11 @@
         <a href="#">Blues Bus</a>
       </div>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#">Nosotros</a></li>
+        <li><a href="index.php">Inicio</a></li>
+        <li><a href="Nosotros.html">Nosotros</a></li>
         <li><a href="Empresas.html">Empresas</a></li>
         <li><a href="#">Contacto</a></li>
-        <li><a href="login.html">Iniciar Sesion</a></li>
+        <li><a href="login.php">Iniciar Sesion</a></li>
       </ul>
     </div>
   </nav>
@@ -27,8 +27,8 @@
     <div class="title">BLUES BUS </div>
     <div class="sub_title">Siempre Confiable</div>
     <div class="btns">
-      <a class="button" href="login.html">Informacion</a>
-      <a class="button" href="register.html">Registrarse</a>
+      <a class="button" href="Nosotros.html">Informacion</a>
+      <a class="button" href="register.php">Registrarse</a>
     </div>
   </div>
 </body>

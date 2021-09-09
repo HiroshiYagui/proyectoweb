@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Catalogo</title>
+    <title>Administrador</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -37,8 +37,9 @@
 </head>
 
 <body class="animsition">
+<?php session_start(); ?>
     <div class="page-wrapper">
-        <!-- MENU SIDEBAR-->
+        <!-- MENU SIDEBAR    BARRA LATERAL -->
         <aside class="menu-sidebar2">
             <div class="logo">
                 <a href="#">
@@ -48,24 +49,32 @@
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
                     <div class="image img-cir img-120">
-                        <img src="images/icon/avatar-big-01.png" alt="John Doe" />
+                        <img src="images/admin-big-01.png" alt="User Sue" />
                     </div>
                     <h4 class="name">Usuario</h4>
-                    <a href="#">Cerrar Sesion</a>
+                    <a href="cerrarsesion.php">Cerrar Sesion</a>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="index2.html">
+                            <a href="Administrador.php">
                                 <i class="fas fa-user"></i>Informacion</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-shopping-basket"></i>Catalogo</a>
+                            <a href="GestionarPasaje.php">
+                                <i class="fas fa-shopping-basket"></i>Gestionar Pasaje</a>
                         </li>
                         <li>
-                            <a href="Verificar.html">
-                                <i class="fas fa-check"></i>Verificar</a>
+                            <a href="GestionarViaje.php">
+                                <i class="fas fa-location-arrow"></i>Gestionar Viaje</a>
+                        </li>
+                        <li>
+                            <a href="GestionarAfiliacion.php">
+                                <i class="fas fa-bar-chart"></i>Gestionar Afiliacion</a>
+                        </li>
+                        <li>
+                            <a href="GestionarUsuarios.php">
+                                <i class="fas fa-users"></i>Gestionar Usuarios</a>
                         </li>
                     </ul>
                 </nav>
@@ -75,7 +84,7 @@
 
         <!-- PAGE CONTAINER-->
         <div class="page-container2">
-            <!-- HEADER DESKTOP-->
+            <!-- HEADER DESKTOP MENU CONTRAIBLE-->
             <header class="header-desktop2">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
@@ -86,9 +95,20 @@
                                 </a>
                             </div>
                             <div class="header-button2">
+                                <div class="header-button-item js-item-menu">
+                                    <!-- <i class="zmdi zmdi-search"></i> -->
+                                    <div class="search-dropdown js-dropdown">
+                                        <form action="">
+                                            <input class="au-input au-input--full au-input--h65" type="text" placeholder="Search for datas &amp; reports..." />
+                                            <span class="search-dropdown__icon">
+                                                <i class="zmdi zmdi-search"></i>
+                                            </span>
+                                        </form>
+                                    </div>
+                                </div>
                                 <div class="header-button-item mr-0 js-sidebar-btn">
                                     <i class="zmdi zmdi-menu"></i>
-                                </div>
+                                </div>   
                             </div>
                         </div>
                     </div>
@@ -104,26 +124,33 @@
                 <div class="menu-sidebar2__content js-scrollbar2">
                     <div class="account2">
                         <div class="image img-cir img-120">
-                            <img src="images/icon/avatar-big-01.png" alt="John Doe" />
+                            <img src="images/admin-big-01.png" alt="John Doe" />
                         </div>
                         <h4 class="name">Usuario</h4>
-                        <a href="#">Cerrar Sesion</a>
+                        <a href="index.php">Sign out</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
                             <li>
-                                <a href="index2.html">
+                                <a href="Administrador.php">
                                     <i class="fas fa-user"></i>Informacion</a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="fas fa-shopping-basket"></i>Catalogo</a>
+                                <a href="GestionarPasaje.php">
+                                    <i class="fas fa-shopping-basket"></i>Gestionar Pasaje</a>
                             </li>
                             <li>
-                                <a href="Verificar.html">
-                                    <i class="fas fa-check"></i>Verificar</a>
+                                <a href="GestionarViaje.php">
+                                    <i class="fas fa-location-arrow"></i>Gestionar Viaje</a>
                             </li>
-    
+                            <li>
+                                <a href="GestionarAfiliacion.php">
+                                    <i class="fas fa-bar-chart"></i>Gestionar Afiliacion</a>
+                            </li>
+                            <li>
+                                <a href="GestionarUsuarios.php">
+                                    <i class="fas fa-users"></i>Gestionar Usuarios</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -138,17 +165,19 @@
                             <div class="col-md-12">
                                 <div class="au-breadcrumb-content">
                                     <div class="au-breadcrumb-left">
-                                        <span class="au-breadcrumb-span">Te Encuentras en:</span>
+                                        <span class="au-breadcrumb-span">Te encuentras en:</span>
                                         <ul class="list-unstyled list-inline au-breadcrumb__list">
                                             <li class="list-inline-item active">
-                                                <a href="#">Catalogo</a>
+                                                <a href="#">Informacion</a>
                                             </li>
                                             <li class="list-inline-item seprate">
                                                 <span>/</span>
                                             </li>
-                                            <li class="list-inline-item">Cliente</li>
+                                            <li class="list-inline-item">Administrador</li>
                                         </ul>
                                     </div>
+                                    <!-- <button class="au-btn au-btn-icon au-btn--green">
+                                        <i class="zmdi zmdi-plus"></i>add item</button> -->
                                 </div>
                             </div>
                         </div>
@@ -157,112 +186,61 @@
             </section>
             <!-- END BREADCRUMB-->
 
-            <div class="col-lg-9 offset-lg-1">
-                <div class="table-responsive table--no-card m-b-30">
-                    <table class="table table-borderless table-striped table-earning">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Destiono</th>
-                                <th>Hora</th>
-                                <th class="text-right">Precio</th>
-                                <th class="text-right">Cantidad</th>
-                                <th class="text-right">Empresa</th>
-                                <th class="text-right">Realizar Compra</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2018-09-29 05:57</td>
-                                <td>Piura</td>
-                                <td>2018-09-30 11:55</td>
-                                <td class="text-right">$30.00</td>
-                                <td class="text-right">14</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Comprar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-28 01:22</td>
-                                <td>La Libertad</td>
-                                <td>2018-09-28 9:30</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">20</td>
-                                <td class="text-right">El Rapido</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Comprar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-27 02:12</td>
-                                <td>Tumbes</td>
-                                <td>2018-09-28 9:30</td>
-                                <td class="text-right">$20.00</td>
-                                <td class="text-right">17</td>
-                                <td class="text-right">Cruz del Sur</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Comprar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-26 23:06</td>
-                                <td>Ica</td>
-                                <td>2018-09-27 6:10</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">22</td>
-                                <td class="text-right">La Molina</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Comprar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-25 19:03</td>
-                                <td>Ancash</td>
-                                <td>2018-09-26 5:30</td>
-                                <td class="text-right">$10.00</td>
-                                <td class="text-right">12</td>
-                                <td class="text-right">Cruz del Sur</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Comprar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-29 05:57</td>
-                                <td>Lambayeque</td>
-                                <td>2018-09-29 19:00</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">15</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Comprar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-24 19:10</td>
-                                <td>Ayacucho</td>
-                                <td>2018-09-25 3:10</td>
-                                <td class="text-right">$30.00</td>
-                                <td class="text-right">9</td>
-                                <td class="text-right">El Rapido</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Comprar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-22 00:43</td>
-                                <td>Madre de Dios</td>
-                                <td>2018-09-22 00:43</td>
-                                <td class="text-right">$20.00</td>
-                                <td class="text-right">14</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Comprar</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Mi Informacion</strong>
+                        <small> :</small>
+                    </div>
+                    <div class="card-body card-block">
+                    <?php
+                        include 'dbcon.php';
+                        if(isset($_SESSION['user'])){
+                        $sql = "SELECT codigo,nombre,apellido,usuario,dni,area,fecha from usuario 
+                        WHERE id=".$_SESSION['user'].";";
+                        $resultado= mysqli_query($conn, $sql);
+                        if(!$resultado){
+                            header('Location:login.php?error=1');
+                            exit;
+                        }else{
+                        $fetch=mysqli_fetch_array($resultado);
+                        echo "<div class='form-group'>
+                            <label for='company' class=' form-control-label'>Codigo</label>
+                            <input type='text' id='nombre' value='".$fetch['codigo']."' class='form-control' disabled=''>
+                            </div>
+                        <div class='form-group'>
+                            <label for='company' class=' form-control-label'>Nombres</label>
+                            <input type='text' id='nombre' value='".$fetch['nombre']."' class='form-control' disabled=''>
+                        </div>
+                        <div class='form-group'>
+                            <label for='vat' class=' form-control-label'>Apellido</label>
+                            <input type='text' id='apellido' value='".$fetch['apellido']."' class='form-control' disabled=''>
+                        </div>
+                        <div class='form-group'>
+                            <label for='street' class=' form-control-label'>DNI</label>
+                            <input type='text' id='direccion' value='".$fetch['dni']."' class='form-control' disabled=''>
+                        </div>
+                        <div class='form-group'>
+                            <label for='street' class=' form-control-label'>E-mail</label>
+                            <input type='text' id='email' value='".$fetch['usuario']."' class='form-control' disabled=''>
+                        </div>
+                        <div class='form-group'>
+                            <label for='street' class=' form-control-label'>Área</label>
+                            <input type='text' id='email' value='".$fetch['area']."' class='form-control' disabled=''>
+                        </div>";
+                    }
+                    }else{
+                        header('Location:login.php?error=1');
+                        exit;
+                    }
+                        ?>
                 </div>
             </div>
-
 
             <section>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            
                         </div>
                     </div>
                 </div>

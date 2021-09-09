@@ -56,23 +56,23 @@
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="Administrador.html">
+                            <a href="Administrador.php">
                                 <i class="fas fa-user"></i>Informacion</a>
                         </li>
                         <li>
-                            <a href="GestionarPasaje.html">
+                            <a href="GestionarPasaje.php">
                                 <i class="fas fa-shopping-basket"></i>Gestionar Pasaje</a>
                         </li>
                         <li>
-                            <a href="GestionarViaje.html">
+                            <a href="GestionarViaje.php">
                                 <i class="fas fa-location-arrow"></i>Gestionar Viaje</a>
                         </li>
                         <li>
-                            <a href="GestionarAfiliacion.html">
+                            <a href="GestionarAfiliacion.php">
                                 <i class="fas fa-bar-chart"></i>Gestionar Afiliacion</a>
                         </li>
                         <li>
-                            <a href="GestionarUsuarios.html">
+                            <a href="GestionarUsuarios.php">
                                 <i class="fas fa-users"></i>Gestionar Usuarios</a>
                         </li>
                     </ul>
@@ -115,28 +115,28 @@
                             <img src="images/admin-big-01.png" alt="John Doe" />
                         </div>
                         <h4 class="name">Usuario</h4>
-                        <a href="#">Cerrar Sesion</a>
+                        <a href="index.php">Cerrar Sesion</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
                             <li>
-                                <a href="Administrador.html">
+                                <a href="Administrador.php">
                                     <i class="fas fa-user"></i>Informacion</a>
                             </li>
                             <li>
-                                <a href="GestionarPasaje.html">
+                                <a href="GestionarPasaje.php">
                                     <i class="fas fa-shopping-basket"></i>Gestionar Pasaje</a>
                             </li>
                             <li>
-                                <a href="GestionarViaje.html">
+                                <a href="GestionarViaje.php">
                                     <i class="fas fa-location-arrow"></i>Gestionar Viaje</a>
                             </li>
                             <li>
-                                <a href="GestionarAfiliacion.html">
+                                <a href="GestionarAfiliacion.php">
                                     <i class="fas fa-bar-chart"></i>Gestionar Afiliacion</a>
                             </li>
                             <li>
-                                <a href="GestionarUsuarios.html">
+                                <a href="GestionarUsuarios.php">
                                     <i class="fas fa-users"></i>Gestionar Usuarios</a>
                             </li>
                         </ul>
@@ -156,7 +156,7 @@
                                         <span class="au-breadcrumb-span">Te encuentras en:</span>
                                         <ul class="list-unstyled list-inline au-breadcrumb__list">
                                             <li class="list-inline-item active">
-                                                <a href="#">Gestionar Usuarios</a>
+                                                <a href="#">Agregar Viaje</a>
                                             </li>
                                             <li class="list-inline-item seprate">
                                                 <span>/</span>
@@ -164,8 +164,8 @@
                                             <li class="list-inline-item">Administrador</li>
                                         </ul>
                                     </div>
-                                    <button class="au-btn au-btn-icon au-btn--green">
-                                        <i class="zmdi zmdi-plus"></i>Agregar Usuario</button>
+                                    <!-- <button class="au-btn au-btn-icon au-btn--green">
+                                        <i class="zmdi zmdi-plus"></i>Agregar Afiliacion</button> -->
                                 </div>
                             </div>
                         </div>
@@ -174,120 +174,60 @@
             </section>
             <!-- END BREADCRUMB-->
 
-            <div class="col-lg-9 offset-lg-1">
-                <div class="table-responsive table--no-card m-b-30">
-                    <table class="table table-borderless table-striped table-earning">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Destiono</th>
-                                <th>Hora</th>
-                                <th class="text-right">Precio</th>
-                                <th class="text-right">Cantidad</th>
-                                <th class="text-right">Empresa</th>
-                                <th class="text-right">Eliminar</th>
-                                <th class="text-right">Modificar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2018-09-29 05:57</td>
-                                <td>Piura</td>
-                                <td>2018-09-30 11:55</td>
-                                <td class="text-right">$30.00</td>
-                                <td class="text-right">14</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-28 01:22</td>
-                                <td>La Libertad</td>
-                                <td>2018-09-28 9:30</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">20</td>
-                                <td class="text-right">El Rapido</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-27 02:12</td>
-                                <td>Tumbes</td>
-                                <td>2018-09-28 9:30</td>
-                                <td class="text-right">$20.00</td>
-                                <td class="text-right">17</td>
-                                <td class="text-right">Cruz del Sur</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-26 23:06</td>
-                                <td>Ica</td>
-                                <td>2018-09-27 6:10</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">22</td>
-                                <td class="text-right">La Molina</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-25 19:03</td>
-                                <td>Ancash</td>
-                                <td>2018-09-26 5:30</td>
-                                <td class="text-right">$10.00</td>
-                                <td class="text-right">12</td>
-                                <td class="text-right">Cruz del Sur</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-29 05:57</td>
-                                <td>Lambayeque</td>
-                                <td>2018-09-29 19:00</td>
-                                <td class="text-right">$25.00</td>
-                                <td class="text-right">15</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-24 19:10</td>
-                                <td>Ayacucho</td>
-                                <td>2018-09-25 3:10</td>
-                                <td class="text-right">$30.00</td>
-                                <td class="text-right">9</td>
-                                <td class="text-right">El Rapido</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-22 00:43</td>
-                                <td>Madre de Dios</td>
-                                <td>2018-09-22 00:43</td>
-                                <td class="text-right">$20.00</td>
-                                <td class="text-right">14</td>
-                                <td class="text-right">Soyuz</td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-minus"></i>Eliminar</button></td>
-                                <td class="text-right"><button class="au-btn--small au-btn-icon au-btn--green">
-                                    <i class="zmdi zmdi-plus"></i>Modificar</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-header">Nuevo VIaje</div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3 class="text-center title-2">Agregar Viaje</h3>
+                        </div>
+                        <hr>
+                        <form action="" method="post" novalidate="novalidate">
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Codigo de Viaje</label>
+                                <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Destino</label>
+                                <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Precio</label>
+                                <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-number" class="control-label mb-1">Empresa</label>
+                                <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
+                                    data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"
+                                    autocomplete="cc-number">
+                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="cc-exp" class="control-label mb-1">Fecha de Salida</label>
+                                        <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration"
+                                            data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY"
+                                            autocomplete="cc-exp">
+                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="x_card_code" class="control-label mb-1">Fecha de Llegada</label>
+                                    <div class="input-group">
+                                        <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
+                                            data-val-cc-cvc="Please enter a valid security code" placeholder="MM / YY" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="offset-5">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-plus"></i> Agregar
+                                </button>
+                                </div>
+                        </form>
+                    </div>
+                    
                 </div>
             </div>
 

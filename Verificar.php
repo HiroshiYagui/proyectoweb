@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Administrador</title>
+    <title>Verificar</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -37,8 +37,10 @@
 </head>
 
 <body class="animsition">
+    
+<?php session_start(); ?>
     <div class="page-wrapper">
-        <!-- MENU SIDEBAR    BARRA LATERAL -->
+        <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
             <div class="logo">
                 <a href="#">
@@ -48,32 +50,24 @@
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
                     <div class="image img-cir img-120">
-                        <img src="images/admin-big-01.png" alt="User Sue" />
+                        <img src="images/icon/avatar-big-01.png" alt="John Doe" />
                     </div>
                     <h4 class="name">Usuario</h4>
-                    <a href="#">Cerrar Sesion</a>
+                    <a href="index.php">Sign out</a>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="Administrador.html">
+                            <a href="index2.php">
                                 <i class="fas fa-user"></i>Informacion</a>
                         </li>
                         <li>
-                            <a href="GestionarPasaje.html">
-                                <i class="fas fa-shopping-basket"></i>Gestionar Pasaje</a>
+                            <a href="Catalogo.php">
+                                <i class="fas fa-shopping-basket"></i>Catalogo</a>
                         </li>
                         <li>
-                            <a href="GestionarViaje.html">
-                                <i class="fas fa-location-arrow"></i>Gestionar Viaje</a>
-                        </li>
-                        <li>
-                            <a href="GestionarAfiliacion.html">
-                                <i class="fas fa-bar-chart"></i>Gestionar Afiliacion</a>
-                        </li>
-                        <li>
-                            <a href="GestionarUsuarios.html">
-                                <i class="fas fa-users"></i>Gestionar Usuarios</a>
+                            <a href="#">
+                                <i class="fas fa-check"></i>Verificar</a>
                         </li>
                     </ul>
                 </nav>
@@ -83,7 +77,7 @@
 
         <!-- PAGE CONTAINER-->
         <div class="page-container2">
-            <!-- HEADER DESKTOP MENU CONTRAIBLE-->
+            <!-- HEADER DESKTOP-->
             <header class="header-desktop2">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
@@ -94,20 +88,10 @@
                                 </a>
                             </div>
                             <div class="header-button2">
-                                <div class="header-button-item js-item-menu">
-                                    <!-- <i class="zmdi zmdi-search"></i> -->
-                                    <div class="search-dropdown js-dropdown">
-                                        <form action="">
-                                            <input class="au-input au-input--full au-input--h65" type="text" placeholder="Search for datas &amp; reports..." />
-                                            <span class="search-dropdown__icon">
-                                                <i class="zmdi zmdi-search"></i>
-                                            </span>
-                                        </form>
-                                    </div>
-                                </div>
+                                
                                 <div class="header-button-item mr-0 js-sidebar-btn">
                                     <i class="zmdi zmdi-menu"></i>
-                                </div>   
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -123,32 +107,24 @@
                 <div class="menu-sidebar2__content js-scrollbar2">
                     <div class="account2">
                         <div class="image img-cir img-120">
-                            <img src="images/admin-big-01.png" alt="John Doe" />
+                            <img src="images/icon/avatar-big-01.png" alt="John Doe" />
                         </div>
                         <h4 class="name">Usuario</h4>
-                        <a href="#">Sign out</a>
+                        <a href="index.php">Sign out</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
                             <li>
-                                <a href="Administrador.html">
+                                <a href="index2.php">
                                     <i class="fas fa-user"></i>Informacion</a>
                             </li>
                             <li>
-                                <a href="GestionarPasaje.html">
-                                    <i class="fas fa-shopping-basket"></i>Gestionar Pasaje</a>
+                                <a href="Catalogo.php">
+                                    <i class="fas fa-shopping-basket"></i>Catalogo</a>
                             </li>
                             <li>
-                                <a href="GestionarViaje.html">
-                                    <i class="fas fa-location-arrow"></i>Gestionar Viaje</a>
-                            </li>
-                            <li>
-                                <a href="GestionarAfiliacion.html">
-                                    <i class="fas fa-bar-chart"></i>Gestionar Afiliacion</a>
-                            </li>
-                            <li>
-                                <a href="GestionarUsuarios.html">
-                                    <i class="fas fa-users"></i>Gestionar Usuarios</a>
+                                <a href="#">
+                                    <i class="fas fa-check"></i>Verificar</a>
                             </li>
                         </ul>
                     </nav>
@@ -164,19 +140,17 @@
                             <div class="col-md-12">
                                 <div class="au-breadcrumb-content">
                                     <div class="au-breadcrumb-left">
-                                        <span class="au-breadcrumb-span">Te encuentras en:</span>
+                                        <span class="au-breadcrumb-span">You are here:</span>
                                         <ul class="list-unstyled list-inline au-breadcrumb__list">
                                             <li class="list-inline-item active">
-                                                <a href="#">Informacion</a>
+                                                <a href="#">Home</a>
                                             </li>
                                             <li class="list-inline-item seprate">
                                                 <span>/</span>
                                             </li>
-                                            <li class="list-inline-item">Administrador</li>
+                                            <li class="list-inline-item">Dashboard</li>
                                         </ul>
                                     </div>
-                                    <!-- <button class="au-btn au-btn-icon au-btn--green">
-                                        <i class="zmdi zmdi-plus"></i>add item</button> -->
                                 </div>
                             </div>
                         </div>
@@ -185,40 +159,62 @@
             </section>
             <!-- END BREADCRUMB-->
 
-            <div class="col-lg-6 offset-lg-3">
-                <div class="card">
-                    <div class="card-header">
-                        <strong>Mi Informacion</strong>
-                        <small> :</small>
-                    </div>
-                    <div class="card-body card-block">
-                        <div class="form-group">
-                            <label for="company" class=" form-control-label">Nombres</label>
-                            <input type="text" id="nombre" value="Usuario Nombres" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="vat" class=" form-control-label">Apellido</label>
-                            <input type="text" id="apellido" value="Usuario Apellidos" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="street" class=" form-control-label">Direccion</label>
-                            <input type="text" id="direccion" value="Userio Direccion" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="street" class=" form-control-label">E-mail</label>
-                            <input type="text" id="email" value="Userio Direccion" class="form-control">
-                        </div>
-                        
-                        </div>
-                        
-                    </div>
+            <div class="col-lg-9 offset-lg-1">
+                <div class="table-responsive table--no-card m-b-30">
+                    <table class="table table-borderless table-striped table-earning">
+                    <?php include 'dbcon.php';
+                        $sql = "select pasaje.codigo,pasaje.nombre,pasaje.apellido,pasaje.dni,pasaje.telefono,pasaje.email,viaje.destino,
+                        viaje.fechas,empresa.nombre_empresa from pasaje 
+                        INNER JOIN viaje ON pasaje.idViaje=viaje.id
+                        INNER JOIN empresa ON viaje.idEmpresa=empresa.id
+                        INNER JOIN usuario ON pasaje.idCliente=usuario.id
+                        WHERE pasaje.idCliente=".$_SESSION['user'].";";
+                        $result = mysqli_query($conn, $sql);
+                        $num_resultados = mysqli_num_rows($result);
+
+                        echo "<thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th class='text-right'>DNI</th>
+                            <th class='text-right'>Telefono</th>
+                            <th class='text-right'>Email</th>
+                            <th class='text-right'>Destino</th>
+                            <th class='text-right'>Fecha Salida</th>
+                            <th class='text-right'>Empresa</th>
+                        </tr>
+                        </thead>
+                        <tbody>";
+                        for ($i=0; $i <$num_resultados; $i++) {
+                            $row = mysqli_fetch_array($result); 
+                            echo "
+                                <tr>
+                                <td>".$row['codigo']."</td>
+                                <td>".$row['nombre']."</td>
+                                <td>".$row['apellido']."</td>
+                                <td class='text-right'>".$row['dni']."</td>
+                                <td class='text-right'>".$row['telefono']."</td>
+                                <td class='text-right'>".$row['email']."</td>
+                                <td class='text-right'>".$row['destino']."</td>
+                                <td class='text-right'>".$row['fechas']."</td>
+                                <td class='text-right'>".$row['nombre_empresa']."</td>
+                            </tr>
+                            </tbody>";
+                        }
+                            ?>
+                    </table>
                 </div>
             </div>
+
 
             <section>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

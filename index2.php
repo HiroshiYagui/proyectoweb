@@ -37,6 +37,7 @@
 </head>
 
 <body class="animsition">
+<?php session_start(); ?>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR    BARRA LATERAL -->
         <aside class="menu-sidebar2">
@@ -51,7 +52,7 @@
                         <img src="images/icon/avatar-big-01.png" alt="User Sue" />
                     </div>
                     <h4 class="name">Usuario</h4>
-                    <a href="#">Cerrar Sesion</a>
+                    <a href="cerrarsesion.php">Cerrar Sesion</a>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
@@ -61,11 +62,11 @@
                             <!-- <span class="inbox-num">3</span> -->
                         </li>
                         <li>
-                            <a href="Catalogo.html">
+                            <a href="Catalogo.php">
                                 <i class="fas fa-shopping-basket"></i>Catalogo</a>
                         </li>
                         <li>
-                            <a href="Verificar.html">
+                            <a href="Verificar.php">
                                 <i class="fas fa-check"></i>Verificar</a>
                         </li>
                     </ul>
@@ -191,7 +192,7 @@
                             <img src="images/icon/avatar-big-01.png" alt="John Doe" />
                         </div>
                         <h4 class="name">Usuario</h4>
-                        <a href="#">Sign out</a>
+                        <a href="login.php">Sign out</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
@@ -201,11 +202,11 @@
                                 <!-- <span class="inbox-num">3</span> -->
                             </li>
                             <li>
-                                <a href="Catalogo.html">
+                                <a href="Catalogo.php">
                                     <i class="fas fa-shopping-basket"></i>Catalogo</a>
                             </li>
                             <li>
-                                <a href="Verificar.html">
+                                <a href="Verificar.php">
                                     <i class="fas fa-check"></i>Verificar</a>
                             </li>
                         </ul>
@@ -249,40 +250,41 @@
                         <small> :</small>
                     </div>
                     <div class="card-body card-block">
-                        <div class="form-group">
-                            <label for="company" class=" form-control-label">Nombres</label>
-                            <input type="text" id="nombre" value="Usuario Nombres" class="form-control">
+                    <?php
+                        include 'dbcon.php';
+                        if(isset($_SESSION['user'])){
+                        $sql = "SELECT codigo,nombre,apellido,usuario,dni,area,fecha from usuario 
+                        WHERE id=".$_SESSION['user'].";";
+                        $resultado= mysqli_query($conn, $sql);
+                        if(!$resultado){
+                            header('Location:login.php?error=1');
+                            exit;
+                        }else{
+                        $fetch=mysqli_fetch_array($resultado);
+                        echo "
+                        <div class='form-group'>
+                            <label for='company' class=' form-control-label'>Nombres</label>
+                            <input type='text' id='nombre' value='".$fetch['nombre']."' class='form-control' disabled=''>
                         </div>
-                        <div class="form-group">
-                            <label for="vat" class=" form-control-label">Apellido</label>
-                            <input type="text" id="apellido" value="Usuario Apellidos" class="form-control">
+                        <div class='form-group'>
+                            <label for='vat' class=' form-control-label'>Apellido</label>
+                            <input type='text' id='apellido' value='".$fetch['apellido']."' class='form-control' disabled=''>
                         </div>
-                        <div class="form-group">
-                            <label for="street" class=" form-control-label">Direccion</label>
-                            <input type="text" id="direccion" value="Userio Direccion" class="form-control">
+                        <div class='form-group'>
+                            <label for='street' class=' form-control-label'>DNI</label>
+                            <input type='text' id='direccion' value='".$fetch['dni']."' class='form-control' disabled=''>
                         </div>
-                        <div class="form-group">
-                            <label for="street" class=" form-control-label">E-mail</label>
-                            <input type="text" id="email" value="Userio Direccion" class="form-control">
+                        <div class='form-group'>
+                            <label for='street' class=' form-control-label'>E-mail</label>
+                            <input type='text' id='email' value='".$fetch['usuario']."' class='form-control' disabled=''>
+                        </div>";
+                    }
+                    }else{
+                        header('Location:login.php?error=1');
+                        exit;
+                    }
+                        ?>
                         </div>
-                        <!-- <div class="row form-group">
-                            <div class="col-8">
-                                <div class="form-group">
-                                    <label for="city" class=" form-control-label">E-mail</label>
-                                    <input type="text" id="city" value="Correo usuario" class="form-control">
-                                </div>
-                            </div> -->
-                            <!-- <div class="col-8">
-                                <div class="form-group">
-                                    <label for="postal-code" class=" form-control-label">Postal Code</label>
-                                    <input type="text" id="postal-code" placeholder="Postal Code" class="form-control">
-                                </div>
-                            </div> -->
-                        </div>
-                        <!-- <div class="form-group">
-                            <label for="country" class=" form-control-label">Country</label>
-                            <input type="text" id="country" placeholder="Country name" class="form-control">
-                        </div> -->
                     </div>
                 </div>
             </div>

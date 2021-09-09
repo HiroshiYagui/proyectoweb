@@ -14,12 +14,12 @@
         $decpsw=md5($v2);
         if($decpsw==$fetchpsw['contra']){
             session_start();
-            $_SESSION['user']=$v1;
+            $_SESSION['user']=$fetchpsw['id'];
             if($fetchpsw['area']=='Cliente'){
-                header('Location:index2.html');
+                header('Location:index2.php');
                 exit;
             }
-            header('Location:index2.html');
+            header('Location:Administrador.php');
             exit;
         }else{       
             header("Location:login.php?error=1");

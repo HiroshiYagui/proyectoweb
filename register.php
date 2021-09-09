@@ -32,11 +32,12 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="css/register.css" rel="stylesheet" media="all">
 
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
+    <div class="page-wrapper " id="big-formulario">
         <div class="page-content--bge5">
             <div class="container">
                 <div class="login-wrap">
@@ -56,8 +57,16 @@
                         <div class="login-form">
                             <form action="register_cliente.php" method="post">
                                 <div class="form-group">
-                                    <label>Nombre de Usuario</label>
+                                    <label>Nombre</label>
                                     <input class="au-input au-input--full" type="text" name="usuario" placeholder="Nombre Usuario">
+                                </div>
+                                <div class="form-group">
+                                    <label>Apellido</label>
+                                    <input class="au-input au-input--full" type="text" name="apellido" placeholder="Apellido Usuario">
+                                </div>
+                                <div class="form-group">
+                                    <label>DNI</label>
+                                    <input class="au-input au-input--full" type="text" name="dni" placeholder="DNI">
                                 </div>
                                 <div class="form-group">
                                     <label>Correo Electronico</label>
