@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Contraseña</label>
-                                    <input class="au-input au-input--full" type="password" name="contraseña" placeholder="Contraseña">
+                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Contraseña">
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
