@@ -179,6 +179,14 @@
                 <div class="table-responsive table--no-card m-b-30">
                     <table class="table table-borderless table-striped table-earning">
                     <?php include 'dbcon.php';
+                     if(!empty($_REQUEST['error'])){
+                        if($_REQUEST['error']=='1' ){
+                        echo '<div class="alert alert-danger" role="alert">Datos erróneos, vuelva a ingresarlos </div>';
+                        }else if($_REQUEST['error']=='2' ){
+                            echo '<div class="alert alert-danger" role="alert">Problemas internos del servidor, espere un rato </div>';
+                        }
+                    }
+
                     if(isset($_SESSION['user'])){
                         $sql = "SELECT 
                         viaje.destino,
@@ -212,8 +220,10 @@
                                 <td>".$row['destino']."</td>
                                 <td class='text-right'>".$row['precio']."</td>
                                 <td class='text-right'>".$row['nombre_empresa']."</td>
+                                <td class='text-right'><button class='au-btn--small au-btn-icon au-btn--blue'>
+                                    <i class='zmdi zmdi-minus'></i>Dar de baja</button></td>
                                 <td class='text-right'><button class='au-btn--small au-btn-icon au-btn--green'>
-                                <i class='zmdi zmdi-plus'></i>Comprar</button></td>
+                                    <i class='zmdi zmdi-plus'></i>Modificar</button></td>
                                 </tr>
                                 </tbody>";
                         }

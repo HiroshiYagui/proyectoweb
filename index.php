@@ -11,7 +11,7 @@
   <nav> 
     <div class="menu">
       <div class="logo">
-        <a href="#">Blues Bus</a>
+        <a href="#">BlUES BUS</a>
       </div>
       <ul>
         <li><a href="index.php">Inicio</a></li>

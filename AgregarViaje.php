@@ -191,15 +191,15 @@ if(!isset($_SESSION['user'])){
                             
                             <div class="form-group">
                                 <label for="cc-payment" class="control-label mb-1">Destino</label>
-                                <input id="destino" name="destino" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                                <input id="destino" name="destino" type="text" class="form-control" aria-required="true" aria-invalid="false" >
                             </div>
                             <div class="form-group">
                                 <label for="cc-payment" class="control-label mb-1">Precio</label>
-                                <input id="precio" name="precio" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                                <input id="precio" name="precio" type="text" class="form-control" aria-required="true" aria-invalid="false" >
                             </div>
                             <div class="form-group">
                                 <label for="cc-number" class="control-label mb-1">Empresa</label>
-                                <input id="empresa" name="empresa" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
+                                <input id="empresa" name="empresa" type="tel" class="form-control cc-number identified visa"  data-val="true"
                                     data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"
                                     autocomplete="cc-number">
                                 <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
@@ -208,7 +208,7 @@ if(!isset($_SESSION['user'])){
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="cc-exp" class="control-label mb-1">Fecha de Salida</label>
-                                        <input id="fechas" name="fechas" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration"
+                                        <input id="fechas" name="fechas" type="tel" class="form-control cc-exp" data-val="true" data-val-required="Please enter the card expiration"
                                             data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY"
                                             autocomplete="cc-exp">
                                         <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
@@ -217,7 +217,7 @@ if(!isset($_SESSION['user'])){
                                 <div class="col-6">
                                     <label for="x_card_code" class="control-label mb-1">Fecha de Llegada</label>
                                     <div class="input-group">
-                                        <input id="fechal" name="fechal" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
+                                        <input id="fechal" name="fechal" type="tel" class="form-control cc-cvc"  data-val="true" data-val-required="Please enter the security code"
                                             data-val-cc-cvc="Please enter a valid security code" placeholder="MM / YY" autocomplete="off">
                                     </div>
                                 </div>
