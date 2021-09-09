@@ -163,6 +163,7 @@
                 <div class="table-responsive table--no-card m-b-30">
                     <table class="table table-borderless table-striped table-earning">
                     <?php include 'dbcon.php';
+                    if(isset($_SESSION['user'])){
                         $sql = "select pasaje.codigo,pasaje.nombre,pasaje.apellido,pasaje.dni,pasaje.telefono,pasaje.email,viaje.destino,
                         viaje.fechas,empresa.nombre_empresa from pasaje 
                         INNER JOIN viaje ON pasaje.idViaje=viaje.id
@@ -202,6 +203,10 @@
                             </tr>
                             </tbody>";
                         }
+                    }else{
+                        header('Location:index.php');
+                        exit;
+                    }
                             ?>
                     </table>
                 </div>

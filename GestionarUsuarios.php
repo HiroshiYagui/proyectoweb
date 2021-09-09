@@ -37,6 +37,7 @@
 </head>
 
 <body class="animsition">
+<?php session_start(); ?>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
@@ -178,6 +179,7 @@
                 <div class="table-responsive table--no-card m-b-30">
                     <table class="table table-borderless table-striped table-earning">
                     <?php include 'dbcon.php';
+                    if(isset($_SESSION['user'])){
                         $sql = "SELECT codigo,nombre,apellido,usuario,dni,area,fecha from usuario";
                         $result = mysqli_query($conn, $sql);
                         $num_resultados = mysqli_num_rows($result);
@@ -214,6 +216,10 @@
                             </tr>
                             </tbody>";
                         }
+                    }else{
+                        header('Location:index.php');
+                        exit;
+                    }
                             ?>
                     </table>
                 </div>

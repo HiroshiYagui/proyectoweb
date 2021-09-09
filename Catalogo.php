@@ -37,6 +37,7 @@
 </head>
 
 <body class="animsition">
+<?php session_start(); ?>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
@@ -161,7 +162,9 @@
                 <div class="table-responsive table--no-card m-b-30">
                     <table class="table table-borderless table-striped table-earning">
                         <?php include 'dbcon.php';
-                        $sql = "SELECT 
+                        if(isset($_SESSION['user'])){
+                        $sql = "SELECT
+                        viaje.id, 
                         viaje.destino,
                         viaje.fechas,
                         viaje.fechal,
@@ -195,9 +198,13 @@
                                 <td class='text-right'>".$row['precio']."</td>
                                 <td class='text-right'>".$row['nombre_empresa']."</td>
                                 <td class='text-right'><button class='au-btn--small au-btn-icon au-btn--green'>
-                                <i class='zmdi zmdi-plus'></i>Comprar</button></td>
+                                <a href='ComprarPasaje.php?select=".$row['id']."><i class='zmdi zmdi-plus'></i>Comprar</a></button></td>
                                 </tr>
                                 </tbody>";
+                        }
+                    }else{
+                            header('Location:index.php');
+                            exit;
                         }
                             ?>
                             

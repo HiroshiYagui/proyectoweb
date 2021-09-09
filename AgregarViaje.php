@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Gestionar Viaje</title>
+    <title>Gestionar Afiliacion</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -37,7 +37,11 @@
 </head>
 
 <body class="animsition">
-<?php session_start(); ?>
+<?php session_start(); 
+if(!isset($_SESSION['user'])){
+        header('Location:index.php');
+        exit;
+}?>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
@@ -52,7 +56,7 @@
                         <img src="images/admin-big-01.png" alt="John Doe" />
                     </div>
                     <h4 class="name">Usuario</h4>
-                    <a href="index.php">Cerrar Sesion</a>
+                    <a href="#">Cerrar Sesion</a>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
@@ -157,7 +161,7 @@
                                         <span class="au-breadcrumb-span">Te encuentras en:</span>
                                         <ul class="list-unstyled list-inline au-breadcrumb__list">
                                             <li class="list-inline-item active">
-                                                <a href="#">Gestionar Viaje</a>
+                                                <a href="#">Agregar Viaje</a>
                                             </li>
                                             <li class="list-inline-item seprate">
                                                 <span>/</span>
@@ -165,8 +169,8 @@
                                             <li class="list-inline-item">Administrador</li>
                                         </ul>
                                     </div>
-                                    <button class="au-btn au-btn-icon au-btn--green" >
-                                        <a href="AgregarViaje.php"><i class="zmdi zmdi-plus"></i>Agregar Viaje</a></button>
+                                    <!-- <button class="au-btn au-btn-icon au-btn--green">
+                                        <i class="zmdi zmdi-plus"></i>Agregar Afiliacion</button> -->
                                 </div>
                             </div>
                         </div>
@@ -175,54 +179,57 @@
             </section>
             <!-- END BREADCRUMB-->
 
-            <div class="col-lg-9 offset-lg-1">
-                <div class="table-responsive table--no-card m-b-30">
-                    <table class="table table-borderless table-striped table-earning">
-                    <?php include 'dbcon.php';
-                    if(isset($_SESSION['user'])){
-                        $sql = "SELECT 
-                        viaje.destino,
-                        viaje.fechas,
-                        viaje.fechal,
-                        viaje.precio,
-                        empresa.nombre_empresa,
-                        viaje.idEmpresa
-                        FROM viaje
-                        INNER JOIN empresa
-                        ON viaje.idEmpresa=empresa.id";
-                        $result = mysqli_query($conn, $sql);
-                        $num_resultados = mysqli_num_rows($result);
-
-                        echo "<thead>
-                            <tr>
-                                <th>Fecha Salida</th>
-                                <th>Fecha Llegada</th>
-                                <th>Destino</th>
-                                <th class='text-right'>Precio</th>
-                                <th class='text-right'>Empresa</th>
-                                <th class='text-right'>Realizar Compra</th>
-                            </tr>
-                        </thead>
-                        <tbody>";
-                        for ($i=0; $i <$num_resultados; $i++) {
-                            $row = mysqli_fetch_array($result); 
-                            echo "<tr>
-                                <td>".$row['fechas']."</td>
-                                <td>".$row['fechal']."</td>
-                                <td>".$row['destino']."</td>
-                                <td class='text-right'>".$row['precio']."</td>
-                                <td class='text-right'>".$row['nombre_empresa']."</td>
-                                <td class='text-right'><button class='au-btn--small au-btn-icon au-btn--green'>
-                                <i class='zmdi zmdi-plus'></i>Comprar</button></td>
-                                </tr>
-                                </tbody>";
-                        }
-                    }else{
-                        header('Location:index.php');
-                        exit;
-                    }
-                            ?>
-                    </table>
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-header">Nuevo Viaje</div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3 class="text-center title-2">Agregar Viaje</h3>
+                        </div>
+                        <hr>
+                        <form action="add_viaje.php" method="post" novalidate="novalidate">
+                            
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Destino</label>
+                                <input id="destino" name="destino" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Precio</label>
+                                <input id="precio" name="precio" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-number" class="control-label mb-1">Empresa</label>
+                                <input id="empresa" name="empresa" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
+                                    data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"
+                                    autocomplete="cc-number">
+                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="cc-exp" class="control-label mb-1">Fecha de Salida</label>
+                                        <input id="fechas" name="fechas" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration"
+                                            data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY"
+                                            autocomplete="cc-exp">
+                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="x_card_code" class="control-label mb-1">Fecha de Llegada</label>
+                                    <div class="input-group">
+                                        <input id="fechal" name="fechal" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
+                                            data-val-cc-cvc="Please enter a valid security code" placeholder="MM / YY" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="offset-5">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-plus"></i> Agregar
+                                </button>
+                                </div>
+                        </form>
+                    </div>
+                    
                 </div>
             </div>
 

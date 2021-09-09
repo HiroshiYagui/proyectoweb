@@ -37,6 +37,11 @@
 </head>
 
 <body class="animsition">
+<?php session_start();
+if(isset($_SESSION['user'])){
+    header('Location:index.php');
+    exit;
+} ?>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR    BARRA LATERAL -->
         <aside class="menu-sidebar2">
@@ -167,7 +172,7 @@
                                 <h3 class="text-center title-2">Comprar Pasaje</h3>
                             </div>
                             <hr>
-                            <form action="" method="post" novalidate="novalidate">
+                            <form action="add_pasaje" method="post" novalidate="novalidate">
                                 <div class="form-group">
                                     <label for="cc-payment" class="control-label mb-1">Monto a Pagar</label>
                                     <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
@@ -207,7 +212,7 @@
                                 <div>
                                     <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                         <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                        <span id="payment-button-amount">Pagar</span>
+                                        <span id="payment-button-amount"><a href="Catalogo.php">Pagar</a></span>
                                         <span id="payment-button-sending" style="display:none;">Sending…</span>
                                     </button>
                                 </div>

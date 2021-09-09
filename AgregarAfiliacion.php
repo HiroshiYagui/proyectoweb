@@ -37,6 +37,11 @@
 </head>
 
 <body class="animsition">
+<?php session_start(); 
+if(!isset($_SESSION['user'])){
+        header('Location:index.php');
+        exit;
+}?>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
@@ -176,28 +181,25 @@
 
             <div class="col-lg-6 offset-lg-3">
                 <div class="card">
-                    <div class="card-header">Nuevo VIaje</div>
+                    <div class="card-header">Nuevo Viaje</div>
                     <div class="card-body">
                         <div class="card-title">
                             <h3 class="text-center title-2">Agregar Viaje</h3>
                         </div>
                         <hr>
-                        <form action="" method="post" novalidate="novalidate">
-                            <div class="form-group">
-                                <label for="cc-payment" class="control-label mb-1">Codigo de Viaje</label>
-                                <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
-                            </div>
+                        <form action="add_viaje.php" method="post" novalidate="novalidate">
+                            
                             <div class="form-group">
                                 <label for="cc-payment" class="control-label mb-1">Destino</label>
-                                <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                                <input id="destino" name="destino" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
                             </div>
                             <div class="form-group">
                                 <label for="cc-payment" class="control-label mb-1">Precio</label>
-                                <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                                <input id="precio" name="precio" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
                             </div>
                             <div class="form-group">
                                 <label for="cc-number" class="control-label mb-1">Empresa</label>
-                                <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
+                                <input id="empresa" name="empresa" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
                                     data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"
                                     autocomplete="cc-number">
                                 <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
@@ -206,7 +208,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="cc-exp" class="control-label mb-1">Fecha de Salida</label>
-                                        <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration"
+                                        <input id="fechas" name="fechas" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration"
                                             data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY"
                                             autocomplete="cc-exp">
                                         <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
@@ -215,7 +217,7 @@
                                 <div class="col-6">
                                     <label for="x_card_code" class="control-label mb-1">Fecha de Llegada</label>
                                     <div class="input-group">
-                                        <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
+                                        <input id="fechal" name="fechal" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
                                             data-val-cc-cvc="Please enter a valid security code" placeholder="MM / YY" autocomplete="off">
                                     </div>
                                 </div>
