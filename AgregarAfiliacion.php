@@ -120,7 +120,7 @@ if(!isset($_SESSION['user'])){
                             <img src="images/admin-big-01.png" alt="John Doe" />
                         </div>
                         <h4 class="name">Usuario</h4>
-                        <a href="index.php">Cerrar Sesion</a>
+                        <a href="cerrarsesion.php">Cerrar Sesion</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
@@ -161,7 +161,7 @@ if(!isset($_SESSION['user'])){
                                         <span class="au-breadcrumb-span">Te encuentras en:</span>
                                         <ul class="list-unstyled list-inline au-breadcrumb__list">
                                             <li class="list-inline-item active">
-                                                <a href="#">Agregar Viaje</a>
+                                                <a href="#">Agregar Afiliacion</a>
                                             </li>
                                             <li class="list-inline-item seprate">
                                                 <span>/</span>
@@ -181,24 +181,21 @@ if(!isset($_SESSION['user'])){
 
             <div class="col-lg-6 offset-lg-3">
                 <div class="card">
-                    <div class="card-header">Nuevo Viaje</div>
+                    <div class="card-header">Nueva Afiliacion</div>
                     <div class="card-body">
                         <div class="card-title">
-                            <h3 class="text-center title-2">Agregar Viaje</h3>
+                            <h3 class="text-center title-2">Agregar Afiliacion</h3>
                         </div>
                         <hr>
-                        <form action="add_viaje.php" method="post" novalidate="novalidate">
+                        <form action="add_afiliacion.php" method="post" novalidate="novalidate">
+                            
                             
                             <div class="form-group">
-                                <label for="cc-payment" class="control-label mb-1">Destino</label>
-                                <input id="destino" name="destino" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
+                                <label for="cc-payment" class="control-label mb-1">RUC</label>
+                                <input id="ruc" name="ruc" type="text" class="form-control" aria-required="true" aria-invalid="false" >
                             </div>
                             <div class="form-group">
-                                <label for="cc-payment" class="control-label mb-1">Precio</label>
-                                <input id="precio" name="precio" type="text" class="form-control" aria-required="true" aria-invalid="false" value="Ya definido">
-                            </div>
-                            <div class="form-group">
-                                <label for="cc-number" class="control-label mb-1">Empresa</label>
+                                <label for="cc-number" class="control-label mb-1">Nombre</label>
                                 <input id="empresa" name="empresa" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
                                     data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"
                                     autocomplete="cc-number">
@@ -207,17 +204,17 @@ if(!isset($_SESSION['user'])){
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="cc-exp" class="control-label mb-1">Fecha de Salida</label>
-                                        <input id="fechas" name="fechas" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration"
+                                        <label for="cc-exp" class="control-label mb-1">Fecha de Acuerdo</label>
+                                        <input id="fechav" name="fechav" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration"
                                             data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY"
                                             autocomplete="cc-exp">
                                         <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <label for="x_card_code" class="control-label mb-1">Fecha de Llegada</label>
+                                    <label for="x_card_code" class="control-label mb-1">Fecha de Expiración</label>
                                     <div class="input-group">
-                                        <input id="fechal" name="fechal" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
+                                        <input id="fechae" name="fechae" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
                                             data-val-cc-cvc="Please enter a valid security code" placeholder="MM / YY" autocomplete="off">
                                     </div>
                                 </div>

@@ -52,7 +52,7 @@
                         <img src="images/icon/avatar-big-01.png" alt="John Doe" />
                     </div>
                     <h4 class="name">Usuario</h4>
-                    <a href="index.php">Cerrar Sesion</a>
+                    <a href="cerrarsesion.php">Cerrar Sesion</a>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
@@ -108,7 +108,7 @@
                             <img src="images/icon/avatar-big-01.png" alt="John Doe" />
                         </div>
                         <h4 class="name">Usuario</h4>
-                        <a href="index.php">Cerrar Sesion</a>
+                        <a href="cerrarsesion.php">Cerrar Sesion</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">

@@ -52,7 +52,7 @@
                         <img src="images/admin-big-01.png" alt="John Doe" />
                     </div>
                     <h4 class="name">Usuario</h4>
-                    <a href="index.php">Cerrar Sesion</a>
+                    <a href="cerrarsesion.php">Cerrar Sesion</a>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
@@ -116,7 +116,7 @@
                             <img src="images/admin-big-01.png" alt="John Doe" />
                         </div>
                         <h4 class="name">Usuario</h4>
-                        <a href="index.php">Cerrar Sesion</a>
+                        <a href="cerrarsesion.php">Cerrar Sesion</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
@@ -166,7 +166,7 @@
                                         </ul>
                                     </div>
                                     <button class="au-btn au-btn-icon au-btn--green">
-                                        <i class="zmdi zmdi-plus"></i>Agregar Usuario</button>
+                                    <a href="AgregarUsuario.php"><i class="zmdi zmdi-plus"></i>Agregar Usuario</a></button>
                                 </div>
                             </div>
                         </div>
